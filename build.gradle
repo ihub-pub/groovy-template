@@ -1,0 +1,16 @@
+plugins {
+    id 'pub.ihub.plugin'
+}
+
+apply {
+    plugin 'pub.ihub.plugin.ihub-groovy'
+    plugin 'pub.ihub.plugin.ihub-test'
+    plugin 'pub.ihub.plugin.ihub-verification'
+}
+
+iHubGitHooks {
+    hooks = [
+        'pre-commit': './gradlew build',
+        'commit-msg': './gradlew commitCheck'
+    ]
+}
