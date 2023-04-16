@@ -5,6 +5,10 @@ plugins {
     id 'pub.ihub.plugin.ihub-git-hooks'
 }
 
+iHubVersion {
+    autoReplaceLaterVersions = true
+}
+
 iHubGitHooks {
     hooks = [
         'pre-commit': './gradlew build',
